@@ -59,7 +59,7 @@ def dispatch(event):
         time = slot['DiningTime']
         
         phone = slot['PhoneNumber']
-        sqs = boto3.resource('sqs',aws_access_key_id='AKIAT7O6UYA3Y3HECZ4I',aws_secret_access_key='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',region_name='us-east-1')
+        sqs = boto3.resource('sqs')
         queue = sqs.get_queue_by_name(QueueName='info_u')
         message = json.dumps(slot)
         logging.info(message)
