@@ -6,7 +6,7 @@ import boto3
 from datetime import datetime
 
 def main():
-    API_KEY = 'GyPtpDOU0g1wuoYlBUW9UOIxb-p-1_s__70kyQL7eJKe5T2tfCBGNdi3Xhe1noho3CsWUBu8CrNfmcUqUMFlJ8oclzi_8EZUclRLf5Pf75v5eB84286Si5FR_zmJXXYx'
+    
     new_header = {'Authorization': 'Bearer %s' % API_KEY, }
 
     # Get the service resource.
