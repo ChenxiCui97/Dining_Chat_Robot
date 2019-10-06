@@ -8,8 +8,7 @@ def lambda_handler(event, context):
     if len(event) > 0:
         id_recieved = event['id']
         content_recieved = event['content']
-    client = boto3.client('lex-runtime','us-east-1',aws_access_key_id="AKIAT7O6UYA365SWTSRN", 
-                            aws_secret_access_key="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",verify=False)
+    client = boto3.client('lex-runtime')
     botresponse = client.post_text(
         botName='OrderDishes',
         botAlias='sara',
