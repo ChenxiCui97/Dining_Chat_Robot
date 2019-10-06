@@ -8,8 +8,7 @@ from boto3.dynamodb.conditions import Key, Attr
 def lambda_handler(event, context):
     # TODO implement
     # sqs
-    sqs = boto3.client('sqs', aws_access_key_id='AKIAT7O6UYA3Y3HECZ4I',
-                       aws_secret_access_key='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', region_name='us-east-1')
+    sqs = boto3.client('sqs')
     queue = sqs.get_queue_url(QueueName='info_u')
     queue_info = sqs.receive_message(QueueUrl=queue['QueueUrl'])
     print(json.dumps(queue_info, indent=2))
@@ -38,8 +37,7 @@ def lambda_handler(event, context):
     rest_id3 = data["hits"]["hits"][i + 2]["_source"]["RestaurantID"]
     rest_ids = [rest_id, rest_id2, rest_id3]
     # dynamoDB
-    dynamodb = boto3.resource('dynamodb', aws_access_key_id='AKIAWAZYHXDAAZPBGAPC',
-                              aws_secret_access_key='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', region_name='us-east-2')
+    dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('yelp-restaurants')
     Message = 'DCC: Hello! Here are my ' + type.capitalize() + ' restaurant suggestions for ' + people + ' people, for ' + date + ' at ' + time + ':'
     for i in range(0, 3):
@@ -54,8 +52,7 @@ def lambda_handler(event, context):
             i + 1) + '. ' + name + ', located at ' + address + ' with the rating of ' + rating + ' and ' + reviews + ' reviews.'
     Message = Message + " Enjoy your meal!"
     # SNS
-    sns = boto3.client('sns', aws_access_key_id='AKIAWAZYHXDAFE2O2F7A',
-                       aws_secret_access_key='MYSkKoiB1et2vaSxVgK8G5DxFEwF91FgUgLNOnrm', region_name='us-east-1')
+    sns = boto3.client('sns')
     sns.publish(
         PhoneNumber=phonenum, Message=Message
     )
