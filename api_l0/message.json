@@ -1,0 +1,164 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is first desgin for message",
+    "title": "Message_v3",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Message",
+      "description": "Transfer message from front to back"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/message": {
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "get response message",
+        "description": "",
+        "operationId": "getMessage",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "description": "Message object that send by user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "user id that mantain the converstaion",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GetMessage"
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "get response message",
+        "description": "",
+        "operationId": "postMessage",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Message object that send by user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SendMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GetMessage"
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "options": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "test connection",
+        "description": "",
+        "operationId": "optionsMessage",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GetMessage"
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GetMessage": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int32",
+          "default": 200
+        },
+        "body": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "SendMessage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
