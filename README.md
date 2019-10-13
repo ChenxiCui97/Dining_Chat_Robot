@@ -5,4 +5,4 @@ This is an Intelligent Dining chat Robot. It collect you basic information: city
 &nbsp;
 ![image](https://github.com/ChenxiCui97/Dining_Chat_Robot/blob/master/images/cut2.PNG)
 &nbsp;
-![image](https://github.com/ChenxiCui97/Dining_Chat_Robot/blob/master/images/cut3.PNG)
+![image](https://github.com/ChenxiCui97/Dining_Chat_Robot/blob/master/images/cut3.jpg)
