@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <!-- Optional CSS -->
+<link rel="stylesheet" href="./js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" type="text/css">
+<link rel="stylesheet" href="./css/cover_reverse.css" type="text/css">
+<link rel="stylesheet" href="./css/chat.css" type="text/css">
+
+<title>Concierge Chat</title>
+</head>
+<body>
+<!-- AWS API SDK -->
+<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+<script type="text/javascript" src="lib/url-template/url-template.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+<script type="text/javascript" src="apigClient.js"></script>
+<!-- Optional JavaScript -->
+<script src="js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="./chat.js"></script>
+<div class="cover-container d-flex p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Concierge</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="./home.html">Home</a>
+        <a class="nav-link active" href="./chat.html">Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <div class="chat">
+	  <div class="chat-title">
+	    <h1>Dining Concierge Chatbot</h1>
+	    <h2>Sara</h2>
+	    <figure class="avatar">
+	      <img src="./robot.png" /></figure>
+	  </div>
+	  <div class="messages">
+	    <div class="mCustomScrollbar"></div>
+	    <!-- <div class="messages-content mCustomScrollbar"></div> -->
+	   	<!-- <div class="messages-content"></div> -->
+	  </div>
+	  <div class="message-box">
+	    <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+	    <button type="submit" class="message-submit" id="message-submit">Send</button>
+	  </div>
+	</div>
+  </main>
+
+  <!-- <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </div>
+  </footer> -->
+</div>
+
+</body>
+</html>
